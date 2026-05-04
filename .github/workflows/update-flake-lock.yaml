@@ -20,5 +20,6 @@ jobs:
               uses: DeterminateSystems/update-flake-lock@v25
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
-                  create-pr: false
-                  commit-msg: "chore: update flake.lock"
+                  branch: main
+                  base: main
+                  commit-msg: "flake.lock: update"

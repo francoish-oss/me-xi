@@ -12,6 +12,7 @@
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
+        ./i18n/i18n.nix
       ];
     };
   };
