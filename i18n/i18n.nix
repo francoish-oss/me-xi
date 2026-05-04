@@ -4,8 +4,8 @@
   # Set your time zone
   time.timeZone = "Europe/Paris";
 
-  # Select internationalisation properties
-  i18n.defaultLocale = "fr_FR.UTF-8";
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.UTF-8";
@@ -19,10 +19,10 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  # Configure keymap in X11 (and most Wayland compositors)
+  # Configure keymap in X11
   services.xserver.xkb = {
     layout = "fr";
-    variant = ""; # Leave empty for standard AZERTY
+    variant = "azerty";
   };
 
   # Configure console keymap (the TTY before the desktop loads)
