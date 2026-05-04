@@ -3,27 +3,25 @@ on:
     push:
         branches:
             - main
+    workflow_dispatch: # Allows you to run it manually from the Actions tab
 
 jobs:
     update-flake:
         runs-on: ubuntu-latest
         permissions:
             contents: write
+            pull-requests: write # Required for the action to create the PR
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v4
+              uses: actions/checkout@v6
 
             - name: Install Nix
               uses: DeterminateSystems/determinate-nix-action@v3
 
-            - name: Update and Push
-              run: |
-                  # Set identity so Git doesn't complain
-                  git config user.name "github-actions[bot]"
-                  git config user.email "github-actions[bot]@users.noreply.github.com"
-
-                  # 1. Update the lockfile and commit it locally
-                  nix flake update --commit-lock-file
-
-                  # 2. Push directly to main
-                  git push
+            - name: Update flake.lock
+              uses: DeterminateSystems/update-flake-lock@v25
+              with:
+                  pr-title: "chore: update flake.lock"
+                  pr-labels: |
+                      dependencies
+                      automated
