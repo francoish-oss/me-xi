@@ -3,5 +3,6 @@
     isNormalUser = true;
     description = "Primary User";
     extraGroups = [ "networkmanager" "wheel" ];
+    initialPassword = "123456";
   };
 }

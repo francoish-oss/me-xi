@@ -11,12 +11,13 @@
       specialArgs = {
         inherit inputs;
         username = "f";
+        adminusername = "fadmin";
       };
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
         ./i18n/i18n.nix
-        ./users # This automatically looks for ./users/default.nix
+        ./users/admin.nix
       ];
     };
   };
