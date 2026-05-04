@@ -22,6 +22,7 @@ jobs:
               uses: DeterminateSystems/update-flake-lock@v25
               with:
                   pr-title: "chore: update flake.lock"
+                  token: ${{ secrets.GITHUB_TOKEN }}
                   pr-labels: |
                       dependencies
                       automated
