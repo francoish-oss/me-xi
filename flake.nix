@@ -18,6 +18,7 @@
         ./hardware-configuration.nix
         ./i18n/i18n.nix
         ./users/admin.nix
+        ./modules/desktop/kde.nix
       ];
     };
   };
