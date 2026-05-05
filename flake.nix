@@ -6,7 +6,7 @@
     inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs: {
     nixosConfigurations.dell-xps-9380-13-4k = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
