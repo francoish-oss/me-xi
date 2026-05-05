@@ -22,7 +22,7 @@
     stylix.url = "github:nix-community/stylix";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-hardware, microvm, ... }@inputs: {
     nixosConfigurations.dell-xps-9380 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
@@ -31,11 +31,13 @@
         adminusername = "fadmin";
       };
       modules = [
+
         # 1. Hardware & System Core
         ./configuration.nix
         ./hardware-configuration.nix
         ./i18n/english_azerty.nix
         nixos-hardware.nixosModules.dell-xps-13-9380
+        microvm.nixosModules.host
 
         # 2. Users
         ./users/admin
@@ -44,7 +46,6 @@
         # 3. System
         ./modules/desktop/kde.nix
         ./modules/security
-        microvm.nixosModules.host
 
         # 4. Theme (bc why not)
         # TODO
