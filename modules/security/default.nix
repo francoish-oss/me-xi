@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ./admin.nix
-    ./user.nix
+    ./firewall.nix
+    ./root.nix
+    ./sudo.nix
   ];
 }

@@ -7,7 +7,7 @@
   };
 
   outputs = { self, nixpkgs, nixos-hardware, ... }@inputs: {
-    nixosConfigurations.dell-xps-9380-13-4k = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.dell-xps-9380 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
         inherit inputs;
@@ -17,9 +17,10 @@
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
-        ./i18n/i18n.nix
-        ./users/admin.nix
+        ./i18n/english_azerty.nix
+        ./users
         ./modules/desktop/kde.nix
+        ./modules/security
         nixos-hardware.nixosModules.dell-xps-13-9380
       ];
     };
