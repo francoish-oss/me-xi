@@ -2,7 +2,7 @@
 
 {
   # These are applied to the whole machine
-  virtualisation.microvm.host.enable = true;
+  virtualisation.microvm.enable = true;
 
   microvm.vms.my-dev-vm = {
     autostart = false;
