@@ -1,6 +1,7 @@
-{ config, pkgs, username, lib, ... }:
+{ config, pkgs, inputs, username, ... }: {
 
-{
+  # 1. NIXOS LEVEL: Define the VM
+  # This works because microvm.nixosModules.host is in flake.nix
   microvm.vms.my-dev-vm = {
     autostart = false;
     config = {
@@ -10,18 +11,21 @@
     };
   };
 
-  # We use 'home-manager.users' here to keep the service tied to the user
+  # 2. HOME-MANAGER LEVEL: The User Service
   home-manager.users."${username}" = {
     systemd.user.services.microvm-session = {
       Unit.Description = "My Personal MicroVM Session";
       Install.WantedBy = [ "default.target" ];
       Service = {
-        # Note: we use 'config' here because we are at the system level
-        ExecStart = "${config.microvm.vms.my-dev-vm.config.microvm.runner}/bin/microvm-run";
+        # Access the system config to get the generated runner path
+        ExecStart = "${config.microvm.vms.my-dev-vm.package}/bin/microvm-run";
         Restart = "on-failure";
       };
     };
 
-    home.packages = [ pkgs.microvm ];
+    # FIX: Don't use pkgs.microvm (it doesn't exist). Use the flake input:
+    home.packages = [
+      config.microvm.package
+    ];
   };
 }

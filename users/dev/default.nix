@@ -7,7 +7,7 @@
   users.users."${username}" = {
     isNormalUser = true;
     description = "Primary User";
-    extraGroups = [ "networkmanager" "kvm" ];
+    extraGroups = [ "networkmanager" "kvm" "libvirtd"];
     initialPassword = "123456";
   };
 
