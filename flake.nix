@@ -44,6 +44,7 @@
         # 3. System
         ./modules/desktop/kde.nix
         ./modules/security
+        microvm.nixosModules.host
 
         # 4. Theme (bc why not)
         # TODO
