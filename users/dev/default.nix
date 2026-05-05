@@ -1,10 +1,13 @@
 { inputs, username, ... }: {
-  imports = [ inputs.home-manager.nixosModules.home-manager ];
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+    ../../modules/microvm/cli.nix
+  ];
 
   users.users."${username}" = {
     isNormalUser = true;
     description = "Primary User";
-    extraGroups = [ "networkmanager" ];
+    extraGroups = [ "networkmanager" "kvm" ];
     initialPassword = "123456";
   };
 
