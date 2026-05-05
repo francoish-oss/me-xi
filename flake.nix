@@ -16,6 +16,9 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    microvm.url = "github:astro/microvm.nix";
+    microvm.inputs.nixpkgs.follows = "nixpkgs";
+
     stylix.url = "github:nix-community/stylix";
   };
 
