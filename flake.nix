@@ -31,7 +31,8 @@
         ./configuration.nix
         ./hardware-configuration.nix
         ./i18n/english_azerty.nix
-        ./users
+        ./users/admin
+        ./users/dev
         ./modules/desktop/kde.nix
         ./modules/security
         nixos-hardware.nixosModules.dell-xps-13-9380

@@ -3,6 +3,5 @@
 {
   imports = [
     ./admin.nix
-    ./user.nix
   ];
 }

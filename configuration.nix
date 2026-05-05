@@ -10,14 +10,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   networking.networkmanager.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.f = {
-    isNormalUser = true;
-    description = "f";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
