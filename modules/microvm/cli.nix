@@ -1,9 +1,6 @@
 { config, pkgs, username, lib, ... }:
 
 {
-  # These are applied to the whole machine
-  virtualisation.microvm.enable = true;
-
   microvm.vms.my-dev-vm = {
     autostart = false;
     config = {
