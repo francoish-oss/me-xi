@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -19,6 +20,7 @@
         ./i18n/i18n.nix
         ./users/admin.nix
         ./modules/desktop/kde.nix
+        nixos-hardware.nixosModules.dell-xps-13-9380
       ];
     };
   };
