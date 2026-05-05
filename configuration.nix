@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }: # Added 'inputs' here so it can see your flake inputs
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
