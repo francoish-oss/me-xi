@@ -25,7 +25,7 @@
 
     # FIX: Don't use pkgs.microvm (it doesn't exist). Use the flake input:
     home.packages = [
-      config.microvm.package
+      inputs.microvm.packages.${pkgs.system}.default
     ];
   };
 }
