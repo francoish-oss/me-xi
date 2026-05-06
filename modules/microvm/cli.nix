@@ -46,7 +46,7 @@
   microvm.vms.cli-vm = {
     config = {
       imports = [ inputs.microvm.nixosModules.microvm ];
-      microvm.vsock.enable = true;
+      microvm.vsock.cid = 10777;
       microvm.hypervisor = "firecracker";
     };
   };
