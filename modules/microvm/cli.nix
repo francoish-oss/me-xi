@@ -42,12 +42,15 @@
 
   # Enabling vsock on host
   boot.kernelModules = [ "vhost_vsock" ];
+  microvm.autostart = true;
 
-  microvm.vms.cli-vm = {
+  microvm.vms.cli = {
     config = {
       imports = [ inputs.microvm.nixosModules.microvm ];
       microvm.vsock.cid = 10777;
       microvm.hypervisor = "firecracker";
     };
   };
+
+  microvm.vms.cli.autostart = true;
 }
