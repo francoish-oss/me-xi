@@ -36,19 +36,18 @@
 
 { config, pkgs, inputs, ... }: {
 
-  # HOST IMPORT: Tells your Dell XPS HOW to run VMs
   imports = [
     inputs.microvm.nixosModules.host
   ];
 
+  # Enabling vsock on host
+  boot.kernelModules = [ "vhost_vsock" ];
+
   microvm.vms.cli-vm = {
     config = {
-      # GUEST IMPORT: Tells the VM it IS a VM
       imports = [ inputs.microvm.nixosModules.microvm ];
-
+      microvm.vsock.enable = true;
       microvm.hypervisor = "firecracker";
-      networking.hostName = "private-guest";
-
     };
   };
 }
