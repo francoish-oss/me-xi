@@ -1,7 +1,7 @@
 { inputs, username, ... }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    ../../modules/microvm/cli.nix
+    # ../../modules/microvm/cli.nix
   ];
 
   users.users."${username}" = {
