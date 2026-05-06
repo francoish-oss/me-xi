@@ -39,16 +39,18 @@
         nixos-hardware.nixosModules.dell-xps-13-9380
         microvm.nixosModules.host
 
-        microvm = {
-            hypervisor = "firecracker";
-            shares = [];
-            volumes = [{
-              image = "root-disk.img";
-              mountPoint = "/";
-              size = 2048; # MB
-            }];
+        {
+          microvm = {
+              hypervisor = "firecracker";
+              shares = [];
+              volumes = [{
+                image = "root-disk.img";
+                mountPoint = "/";
+                size = 2048; # MB
+              }];
 
-        };
+          };
+        }
 
         # 2. Users
         ./users/admin
