@@ -42,7 +42,6 @@
 
   # Enabling vsock on host
   boot.kernelModules = [ "vhost_vsock" ];
-  microvm.autostart = true;
 
   microvm.vms.cli = {
     config = {
