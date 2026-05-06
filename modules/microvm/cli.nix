@@ -33,3 +33,22 @@
 #     ];
 #   };
 # }
+
+{ config, pkgs, inputs, ... }: {
+
+  # HOST IMPORT: Tells your Dell XPS HOW to run VMs
+  imports = [
+    inputs.microvm.nixosModules.host
+  ];
+
+  microvm.vms.cli-vm = {
+    config = {
+      # GUEST IMPORT: Tells the VM it IS a VM
+      imports = [ inputs.microvm.nixosModules.microvm ];
+
+      microvm.hypervisor = "firecracker";
+      networking.hostName = "private-guest";
+
+    };
+  };
+}
