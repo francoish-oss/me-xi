@@ -51,5 +51,5 @@
     };
   };
 
-  microvm.vms.cli.autostart = true;
+  microvm.vms.cli.autostart = false;
 }
