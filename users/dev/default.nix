@@ -15,7 +15,7 @@
     extraSpecialArgs = { inherit inputs username; };
     users."${username}" = {
       imports = [
-        inputs.plasma-manager.homeManagerModules.plasma-manager
+        inputs.plasma-manager.homeManager.plasma-manager
         ./home.nix
       ];
     };
