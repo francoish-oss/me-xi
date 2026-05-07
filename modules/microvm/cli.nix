@@ -50,7 +50,7 @@
       microvm.vsock.cid = 10777;
       microvm.hypervisor = "firecracker";
 
-      socket = "/run/${username}/microvm-cli.sock";
+      microvm.socket = "/run/${username}/microvm-cli.sock";
 
     };
   };
