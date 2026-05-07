@@ -49,9 +49,7 @@
       imports = [ inputs.microvm.nixosModules.microvm ];
       microvm.vsock.cid = 10777;
       microvm.hypervisor = "firecracker";
-
-      microvm.socket = "/run/${username}/microvm-cli.sock";
-
+      microvm.socket = "/run/user/${toString config.users.users.${username}.uid}/microvm-cli.sock";
     };
   };
 
