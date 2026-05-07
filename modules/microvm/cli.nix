@@ -34,7 +34,7 @@
 #   };
 # }
 
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, username, ... }: {
 
   imports = [
     inputs.microvm.nixosModules.host
@@ -44,6 +44,8 @@
   boot.kernelModules = [ "vhost_vsock" ];
 
   microvm.vms.cli = {
+    socket = "/run/${username}/microvm-cli.sock";
+
     config = {
       imports = [ inputs.microvm.nixosModules.microvm ];
       microvm.vsock.cid = 10777;
