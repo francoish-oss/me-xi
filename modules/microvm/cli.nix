@@ -44,7 +44,6 @@
   boot.kernelModules = [ "vhost_vsock" ];
 
   microvm.vms.cli = {
-
     config = {
       imports = [ inputs.microvm.nixosModules.microvm ];
       microvm.vsock.cid = 10777;
