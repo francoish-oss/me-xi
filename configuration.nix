@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ./hardware/dell-xps-9380/hardware-configuration.nix ];
 
   # 1. Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
