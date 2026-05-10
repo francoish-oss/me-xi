@@ -33,7 +33,7 @@
       modules = [
         # 1. Hardware & System Core
         ./configuration.nix
-        ./hardware-configuration.nix
+        ./hardware/dell-xps-9380/hardware-configuration.nix
         ./i18n/english_azerty.nix
         nixos-hardware.nixosModules.dell-xps-13-9380
 
