@@ -1,32 +1,24 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
+  # This configures the system-wide persistence
   environment.persistence."/persist" = {
     hideMounts = true;
 
-    # SYSTEM LEVEL PERSISTENCE
-    # Even in a lean setup, these keep your hardware from "forgetting" its identity
+    # SYSTEM DIRECTORIES (These live on your SSD)
     directories = [
-      "/var/log"                 # For system logs/journal
-      "/var/lib/bluetooth"       # Keeps your mouse/headphones paired
-      "/var/lib/networkmanager"  # Keeps your Wi-Fi passwords
+      "/var/log"                 # Keeps system logs so you can troubleshoot crashes
+      "/var/lib/bluetooth"       # Keeps your headphones/mouse paired
+      "/var/lib/networkmanager"  # Keeps your Wi-Fi connections and passwords
+      "/var/lib/nixos"           # Keeps track of system state/uid mappings
+
+      "/var/lib/nixos"    # Keeps track of your system generation links
+      "/var/lib/nix"      # Keeps the binary cache metadata and DB
     ];
 
+    # SYSTEM FILES
     files = [
-      "/etc/machine-id"          # Crucial for DBus and system stability
+      "/etc/machine-id"          # This is unique to your hardware install
     ];
-
-    # USER LEVEL PERSISTENCE
-    # Replace "your-username" with your actual user variable or string
-    users.your-username = {
-      directories = [
-        "Documents"
-        "Downloads"
-        # Since you use Bitwarden and want a fresh browser,
-        # we EXCLUDE .mozilla and .config/plasma files here.
-      ];
-      # Files you might want to keep in the home root
-      files = [ ];
-    };
   };
 }

@@ -21,4 +21,18 @@
       ];
     };
   };
+
+  environment.persistence."/persist" = {
+    hideMounts = true;
+    users."${username}" = {
+      directories = [
+        "Documents"
+        "Downloads"
+        "Pictures"
+        "Videos"
+      ];
+      files = [ ];
+    };
+  };
+
 }
