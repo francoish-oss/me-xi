@@ -27,14 +27,21 @@
     };
   };
 
-  programs.plasma.desktop.icons = {
-    "firefox" = {
-        name = "Firefox Web Browser";
-        icon = "firefox";
-        # Point to the actual .desktop file provided by the package
-        link = "${pkgs.firefox}/share/applications/firefox.desktop";
-        x = 0;
-        y = 0;
-      };
-  };
+  programs.plasma.desktop.widgets = [
+        {
+          name = "org.kde.plasma.icon";
+          config = {
+            General = {
+              # This points to the .desktop file
+              url = "file://${pkgs.firefox}/share/applications/firefox.desktop";
+            };
+          };
+          geometry = {
+            width = 10;
+            height = 10;
+            x = 0;
+            y = 0;
+          };
+        }
+    ];
 }
