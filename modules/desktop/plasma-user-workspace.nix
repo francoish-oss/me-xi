@@ -1,17 +1,13 @@
 { pkgs, ... }:
 {
   programs.plasma = {
-    #
-    # Some high-level settings:
-    #
     workspace = {
-      clickItemTo = "open"; # If you liked the click-to-open default from plasma 5
+      clickItemTo = "open";
       lookAndFeel = "org.kde.breezedark.desktop";
       cursor = {
         theme = "Bibata-Modern-Ice";
         size = 32;
       };
-      iconTheme = "Papirus-Dark";
       wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Patak/contents/images/1080x1920.png";
     };
 
@@ -62,15 +58,6 @@
               };
             };
           }
-          # Or you can configure the widgets by adding the widget-specific options for it.
-          # See modules/widgets for supported widgets and options for these widgets.
-          # For example:
-          {
-            kickoff = {
-              sortAlphabetically = true;
-              icon = "nix-snowflake-white";
-            };
-          }
           # Adding configuration to the widgets can also for example be used to
           # pin apps to the task-manager, which this example illustrates by
           # pinning dolphin and konsole to the task-manager by default with widget-specific options.
@@ -107,8 +94,8 @@
           # some modifications in which entries to show.
           {
             digitalClock = {
-              calendar.firstDayOfWeek = "sunday";
-              time.format = "12h";
+              calendar.firstDayOfWeek = "monday";
+              time.format = "24h";
             };
           }
           {
@@ -117,88 +104,87 @@
               shown = [
                 "org.kde.plasma.battery"
                 "org.kde.plasma.bluetooth"
-              ];
-              # And explicitly hide networkmanagement and volume
-              hidden = [
                 "org.kde.plasma.networkmanagement"
                 "org.kde.plasma.volume"
               ];
+              # And explicitly hide networkmanagement and volume
+              hidden = [];
             };
           }
         ];
         hiding = "autohide";
       }
       # Application name, Global menu and Song information and playback controls at the top
-      {
-        location = "top";
-        height = 26;
-        widgets = [
-          {
-            applicationTitleBar = {
-              behavior = {
-                activeTaskSource = "activeTask";
-              };
-              layout = {
-                elements = [ "windowTitle" ];
-                horizontalAlignment = "left";
-                showDisabledElements = "deactivated";
-                verticalAlignment = "center";
-              };
-              overrideForMaximized.enable = false;
-              titleReplacements = [
-                {
-                  type = "regexp";
-                  originalTitle = "^Brave Web Browser$";
-                  newTitle = "Brave";
-                }
-                {
-                  type = "regexp";
-                  originalTitle = ''\\bDolphin\\b'';
-                  newTitle = "File manager";
-                }
-              ];
-              windowTitle = {
-                font = {
-                  bold = false;
-                  fit = "fixedSize";
-                  size = 12;
-                };
-                hideEmptyTitle = true;
-                margins = {
-                  bottom = 0;
-                  left = 10;
-                  right = 5;
-                  top = 0;
-                };
-                source = "appName";
-              };
-            };
-          }
-          "org.kde.plasma.appmenu"
-          "org.kde.plasma.panelspacer"
-          {
-            plasmusicToolbar = {
-              panelIcon = {
-                albumCover = {
-                  useAsIcon = false;
-                  radius = 8;
-                };
-                icon = "view-media-track";
-              };
-              playbackSource = "auto";
-              musicControls.showPlaybackControls = true;
-              songText = {
-                displayInSeparateLines = true;
-                maximumWidth = 640;
-                scrolling = {
-                  behavior = "alwaysScroll";
-                  speed = 3;
-                };
-              };
-            };
-          }
-        ];
-      }
+      # {
+      #   location = "top";
+      #   height = 26;
+      #   widgets = [
+      #     {
+      #       applicationTitleBar = {
+      #         behavior = {
+      #           activeTaskSource = "activeTask";
+      #         };
+      #         layout = {
+      #           elements = [ "windowTitle" ];
+      #           horizontalAlignment = "left";
+      #           showDisabledElements = "deactivated";
+      #           verticalAlignment = "center";
+      #         };
+      #         overrideForMaximized.enable = false;
+      #         titleReplacements = [
+      #           {
+      #             type = "regexp";
+      #             originalTitle = "^Brave Web Browser$";
+      #             newTitle = "Brave";
+      #           }
+      #           {
+      #             type = "regexp";
+      #             originalTitle = ''\\bDolphin\\b'';
+      #             newTitle = "File manager";
+      #           }
+      #         ];
+      #         windowTitle = {
+      #           font = {
+      #             bold = false;
+      #             fit = "fixedSize";
+      #             size = 12;
+      #           };
+      #           hideEmptyTitle = true;
+      #           margins = {
+      #             bottom = 0;
+      #             left = 10;
+      #             right = 5;
+      #             top = 0;
+      #           };
+      #           source = "appName";
+      #         };
+      #       };
+      #     }
+      #     "org.kde.plasma.appmenu"
+      #     "org.kde.plasma.panelspacer"
+      #     {
+      #       plasmusicToolbar = {
+      #         panelIcon = {
+      #           albumCover = {
+      #             useAsIcon = false;
+      #             radius = 8;
+      #           };
+      #           icon = "view-media-track";
+      #         };
+      #         playbackSource = "auto";
+      #         musicControls.showPlaybackControls = true;
+      #         songText = {
+      #           displayInSeparateLines = true;
+      #           maximumWidth = 640;
+      #           scrolling = {
+      #             behavior = "alwaysScroll";
+      #             speed = 3;
+      #           };
+      #         };
+      #       };
+      #     }
+      #   ];
+      # }
     ];
 
     window-rules = [
