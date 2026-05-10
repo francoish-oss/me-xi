@@ -34,6 +34,10 @@
             horizontal = 100;
             vertical = 100;
           };
+          size = {
+                    width = 50;
+                    height = 50;
+                  };
           config = {
             General = {
               # Use the .desktop file path or name
