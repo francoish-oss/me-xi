@@ -4,6 +4,7 @@
 
   imports = [
       ../../modules/apps/firefox.nix
+      ../../desktop/plasma-user-workspace.nix
   ];
 
   home.packages = with pkgs; [
