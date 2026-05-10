@@ -24,38 +24,6 @@
       };
     };
 
-    desktop.widgets = [
-      {
-        plasmusicToolbar = {
-          position = {
-            horizontal = 51;
-            vertical = 100;
-          };
-          size = {
-            width = 250;
-            height = 250;
-          };
-        };
-      }
-      {
-              # The Firefox Desktop Icon
-              name = "org.kde.plasma.icon";
-              position = {
-                horizontal = 51;
-                vertical = 400; # Adjusted so it doesn't overlap your music player
-              };
-              size = {
-                width = 50;
-                height = 50;
-              };
-              config = {
-                General = {
-                  # This points to the application desktop file
-                  url = "file://${pkgs.firefox}/share/applications/firefox.desktop";                };
-              };
-            }
-    ];
-
     panels = [
       # Windows-like panel at the bottom
       {
@@ -252,8 +220,6 @@
     kwin = {
       edgeBarrier = 0; # Disables the edge-barriers introduced in plasma 6.1
       cornerBarrier = false;
-
-      scripts.polonium.enable = true;
     };
 
     kscreenlocker = {
