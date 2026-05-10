@@ -27,15 +27,13 @@
     };
   };
 
-  # 3. Plasma Desktop Icon
-  programs.plasma.desktop.icons = [
-    {
-      name = "Firefox";
-      icon = "firefox";
-      # This points to the .desktop file provided by the firefox package
-      link = "${pkgs.firefox}/share/applications/firefox.desktop";
-      x = 0;
-      y = 0;
-    }
-  ];
+  programs.plasma.desktop.icons = {
+      "firefox-icon" = {
+        name = "Firefox";
+        icon = "firefox";
+        link = "${pkgs.firefox}/share/applications/firefox.desktop";
+        x = 0;
+        y = 0;
+      };
+  };
 }
