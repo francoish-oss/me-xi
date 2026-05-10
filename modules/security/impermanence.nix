@@ -12,7 +12,6 @@
       "/var/lib/networkmanager"  # Keeps your Wi-Fi connections and passwords
       "/var/lib/nixos"           # Keeps track of system state/uid mappings
 
-      "/var/lib/nixos"    # Keeps track of your system generation links
       "/var/lib/nix"      # Keeps the binary cache metadata and DB
     ];
 
