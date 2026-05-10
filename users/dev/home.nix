@@ -2,8 +2,11 @@
 
   home.stateVersion = "25.11";
 
+  imports = [
+      ./modules/app/firefox.nix
+  ];
+
   home.packages = with pkgs; [
-    firefox
     vlc
   ];
 
