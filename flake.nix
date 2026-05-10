@@ -24,7 +24,7 @@
     impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, microvm, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-hardware, microvm, impermanence, ... }@inputs: {
     nixosConfigurations.dell-xps-9380 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
