@@ -164,10 +164,7 @@
       };
     };
 
-    kwinrc.Desktops.Number = {
-      value = 8;
-      immutable = true;
-    };
+
 
   };
 }
