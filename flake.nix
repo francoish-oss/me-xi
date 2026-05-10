@@ -20,6 +20,8 @@
     microvm.inputs.nixpkgs.follows = "nixpkgs";
 
     stylix.url = "github:nix-community/stylix";
+
+    impermanence.url = "github:nix-community/impermanence";
   };
 
   outputs = { self, nixpkgs, nixos-hardware, microvm, ... }@inputs: {
@@ -36,6 +38,7 @@
         ./hardware/dell-xps-9380/hardware-configuration.nix
         ./i18n/english_azerty.nix
         nixos-hardware.nixosModules.dell-xps-13-9380
+        impermanence.nixosModules.impermanence
 
         # 2. Users
         ./users/admin

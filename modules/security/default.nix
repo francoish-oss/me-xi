@@ -5,5 +5,6 @@
     ./firewall.nix
     ./root.nix
     ./sudo.nix
+    ./impermanence.nix
   ];
 }
