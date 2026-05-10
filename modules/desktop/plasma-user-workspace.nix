@@ -37,6 +37,20 @@
           };
         };
       }
+      {
+              # The Firefox Desktop Icon
+              name = "org.kde.plasma.icon";
+              position = {
+                horizontal = 51;
+                vertical = 400; # Adjusted so it doesn't overlap your music player
+              };
+              config = {
+                General = {
+                  # This points to the application desktop file
+                  url = "applications:firefox.desktop";
+                };
+              };
+            }
     ];
 
     panels = [
@@ -221,10 +235,12 @@
           idleTimeoutWhenLocked = "immediately";
         };
       };
+
       battery = {
         powerButtonAction = "sleep";
         whenSleepingEnter = "standbyThenHibernate";
       };
+
       lowBattery = {
         whenLaptopLidClosed = "hibernate";
       };
