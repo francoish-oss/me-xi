@@ -3,7 +3,7 @@
   home.stateVersion = "25.11";
 
   imports = [
-      ./modules/app/firefox.nix
+      ../../modules/app/firefox.nix
   ];
 
   home.packages = with pkgs; [
