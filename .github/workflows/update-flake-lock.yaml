@@ -1,31 +1,31 @@
-name: update-flake-lock
-on:
-    push:
-        branches:
-            - main
-    workflow_dispatch: # Allows you to run it manually from the Actions tab
+# name: update-flake-lock
+# on:
+#     push:
+#         branches:
+#             - main
+#     workflow_dispatch: # Allows you to run it manually from the Actions tab
 
-jobs:
-    update-flake:
-        runs-on: ubuntu-latest
-        permissions:
-            contents: write
-            pull-requests: write # Required for the action to create the PR
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v6
-              with:
-                  # This is the mandatory fix for the 400 / Duplicate Header error
-                  persist-credentials: false
+# jobs:
+#     update-flake:
+#         runs-on: ubuntu-latest
+#         permissions:
+#             contents: write
+#             pull-requests: write # Required for the action to create the PR
+#         steps:
+#             - name: Checkout repository
+#               uses: actions/checkout@v6
+#               with:
+#                   # This is the mandatory fix for the 400 / Duplicate Header error
+#                   persist-credentials: false
 
-            - name: Install Nix
-              uses: DeterminateSystems/determinate-nix-action@v3
+#             - name: Install Nix
+#               uses: DeterminateSystems/determinate-nix-action@v3
 
-            - name: Update flake.lock
-              uses: DeterminateSystems/update-flake-lock@v25
-              with:
-                  pr-title: "chore: update flake.lock"
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  pr-labels: |
-                      dependencies
-                      automated
+#             - name: Update flake.lock
+#               uses: DeterminateSystems/update-flake-lock@v25
+#               with:
+#                   pr-title: "chore: update flake.lock"
+#                   token: ${{ secrets.GITHUB_TOKEN }}
+#                   pr-labels: |
+#                       dependencies
+#                       automated
