@@ -7,9 +7,9 @@
       isDefault = true;
 
       # 1. Extensions (uBlock Origin)
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        ublock-origin
-      ];
+      # extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      #   ublock-origin
+      # ];
 
       # 2. Brave Search as Default
       search = {
