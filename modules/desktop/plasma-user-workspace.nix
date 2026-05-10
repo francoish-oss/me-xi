@@ -44,6 +44,10 @@
                 horizontal = 51;
                 vertical = 400; # Adjusted so it doesn't overlap your music player
               };
+              size = {
+                width = 50;
+                height = 50;
+              };
               config = {
                 General = {
                   # This points to the application desktop file
