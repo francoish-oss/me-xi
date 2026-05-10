@@ -11,7 +11,7 @@
 
   environment.persistence."/persist" = {
     hideMounts = true;
-    users."${username}" = {
+    users."${adminusername}" = {
       directories = [
         "Documents"
         "Downloads"
