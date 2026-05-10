@@ -30,11 +30,16 @@
   programs.plasma.desktop.widgets = [
         {
           name = "org.kde.plasma.icon";
+          position = {
+            horizontal = 100;
+            vertical = 100;
+          };
           config = {
             General = {
-              url = "file://${pkgs.firefox}/share/applications/firefox.desktop";
+              # Use the .desktop file path or name
+              url = "applications:firefox.desktop";
             };
           };
         }
-    ];
+  ];
 }
