@@ -51,8 +51,7 @@
               config = {
                 General = {
                   # This points to the application desktop file
-                  url = "applications:firefox.desktop";
-                };
+                  url = "file://${pkgs.firefox}/share/applications/firefox.desktop";                };
               };
             }
     ];
