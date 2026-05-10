@@ -28,9 +28,10 @@
   };
 
   programs.plasma.desktop.icons = {
-      "firefox-icon" = {
-        name = "Firefox";
+    "firefox" = {
+        name = "Firefox Web Browser";
         icon = "firefox";
+        # Point to the actual .desktop file provided by the package
         link = "${pkgs.firefox}/share/applications/firefox.desktop";
         x = 0;
         y = 0;
