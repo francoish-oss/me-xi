@@ -44,6 +44,7 @@
         # 1. Hardware & System Core
         ./configuration.nix
         ./hardware/dell-xps-9380/hardware-configuration.nix
+        ./hardware/fs_needforboot.nix
         ./partition.nix
         ./i18n/english_azerty.nix
 

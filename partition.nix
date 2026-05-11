@@ -38,13 +38,11 @@
                     "/nix" = {
                       mountpoint = "/nix";
                       mountOptions = [ "compress=zstd" "noatime" ];
-                      neededForBoot = true; # Somehow required ?
                     };
                     # This stores what you actually want to keep
                     "/persist" = {
                       mountpoint = "/persist";
                       mountOptions = [ "compress=zstd" "noatime" ];
-                      neededForBoot = true; # Somehow required ?
                     };
                     # Your swap file subvolume
                     "/swap" = {
