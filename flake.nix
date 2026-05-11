@@ -22,23 +22,30 @@
     stylix.url = "github:nix-community/stylix";
 
     impermanence.url = "github:nix-community/impermanence";
+
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, microvm, impermanence, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-hardware, microvm, impermanence, disko, ... }@inputs: {
     nixosConfigurations.dell-xps-9380 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
         inherit inputs;
         username = "f";
         adminusername = "fadmin";
+        device = "/dev/nvme0n1";
       };
       modules = [
+        nixos-hardware.nixosModules.dell-xps-13-9380
+        impermanence.nixosModules.impermanence
+        disko.nixosModules.disko
+
         # 1. Hardware & System Core
         ./configuration.nix
         ./hardware/dell-xps-9380/hardware-configuration.nix
+        ./partition.nix
         ./i18n/english_azerty.nix
-        nixos-hardware.nixosModules.dell-xps-13-9380
-        impermanence.nixosModules.impermanence
 
         # 2. Users
         ./users/admin
@@ -52,5 +59,8 @@
         # TODO
       ];
     };
-  };
+
+
+
+  }; # END OF OUTPUT
 }
