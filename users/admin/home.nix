@@ -16,7 +16,7 @@ let
       sudo mount -o remount,ro /boot
 
       echo "✅ Done! System is updated and /boot is secured."
-      read -p "Press enter to close..."
+      read -rp "Press enter to close..."
     '';
   };
 in
