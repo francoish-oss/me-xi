@@ -5,7 +5,7 @@
     ./admin.nix
   ];
 
-  environment.system-packages = with pkgs; [
-      sbctl
-  ];
+  # environment.system-packages = with pkgs; [
+  #     sbctl
+  # ];
 }
