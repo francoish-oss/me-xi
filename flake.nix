@@ -60,6 +60,7 @@
         # 4. Theme (bc why not)
         # TODO
       ];
+      system.stateVersion = "25.11";
     };
 
 

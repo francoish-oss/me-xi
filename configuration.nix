@@ -9,8 +9,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
   networking.networkmanager.enable = true;
 
+  boot.plymouth.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  system.stateVersion = "25.11";
 }
