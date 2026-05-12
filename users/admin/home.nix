@@ -22,5 +22,5 @@ let
 in
 {
   home.stateVersion = "25.11";
-  home.packages = [ updateScript ];
+  home.packages = [ updateScript , pkgs.vulnix ];
 }
