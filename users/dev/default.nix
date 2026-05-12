@@ -33,7 +33,9 @@
         ".local/share/cosmic"
         ".local/state/cosmic"
       ];
-      files = [ ];
+      files = [
+        ".config/cosmic-initial-setup-done"
+      ];
     };
   };
 
