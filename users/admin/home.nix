@@ -22,17 +22,5 @@ let
 in
 {
   home.stateVersion = "25.11";
-
-  # 1. Add the script package to your user profile
   home.packages = [ updateScript ];
-
-  # 2. Update the .desktop launcher to use the package path
-  home.file."Desktop/Update NixOS.desktop".text = ''
-    [Desktop Entry]
-    Name=Update NixOS
-    Exec=${lib.getExe updateScript}
-    Type=Application
-    Terminal=true
-    Icon=system-run
-  '';
 }
