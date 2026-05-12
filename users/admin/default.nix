@@ -3,8 +3,6 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  home.file."Desktop/MyFolder".source = /path/to/folder;
-
   users.users."${adminusername}" = {
     isNormalUser = true;
     description = "System Administrator";
@@ -13,6 +11,16 @@
       "wheel"
     ];
     initialPassword = "123456";
+  };
+
+  home-manager = {
+    backupFileExtension = "before-nix-reset";
+    extraSpecialArgs = { inherit inputs adminusername; };
+    users."${username}" = {
+      imports = [
+        ./home.nix
+      ];
+    };
   };
 
   environment.persistence."/persist" = {
