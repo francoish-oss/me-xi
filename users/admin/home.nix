@@ -10,7 +10,7 @@ let
       sudo mount -o remount,rw /boot
 
       echo "❄️ Starting NixOS Rebuild..."
-      sudo nixos-rebuild switch
+      sudo nixos-rebuild switch --flake "github:francoish-oss/me-xi#dell-xps-9380" --refresh
 
       echo "🔒 Locking /boot..."
       sudo mount -o remount,ro /boot
