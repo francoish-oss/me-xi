@@ -1,4 +1,4 @@
-({ pkgs, lib, ... }: {
+{ pkgs, lib, ... }: {
 
   # Lanzaboote currently replaces the systemd-boot module.
   # This setting is usually set to true in configuration.nix
@@ -9,4 +9,4 @@
     enable = true;
     pkiBundle = "/var/lib/sbctl";
   };
-})
+}
