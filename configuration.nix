@@ -9,6 +9,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
   networking.networkmanager.enable = true;
 
+  boot.plymouth.enable = true;
+  boot.initrd.systemd.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
