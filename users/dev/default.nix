@@ -1,6 +1,6 @@
 { inputs, username, ... }: {
   imports = [
-    # inputs.home-manager.nixosModules.home-manager
+    inputs.home-manager.nixosModules.home-manager
     ../../modules/microvm/cli.nix
   ];
 
