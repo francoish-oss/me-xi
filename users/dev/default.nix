@@ -31,6 +31,7 @@
         "Videos"
         ".config/cosmic"
         ".local/share/cosmic"
+        ".local/state/cosmic"
       ];
       files = [ ];
     };
