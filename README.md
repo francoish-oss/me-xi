@@ -26,3 +26,11 @@ Applications :
   - [ ] test
 
 Nix Dependencies :
+- NixPkgs 25.11
+- NixOs Hardware
+- Home manager
+- Lanzaboote v1.0.0
+- MicroVM
+- Stylix
+- Impermanence
+- Disko
