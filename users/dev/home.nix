@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     vlc
     pkgs.gimp
+    pkgs.cosmic-ext-applet-minimon
   ];
 
 }

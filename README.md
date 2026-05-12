@@ -19,9 +19,9 @@ Security features :
 
 QOL Features :
 - [X] COSMIC UI with persistant configuration
+  - [ ]  
 
 Applications :
-
 - [ ] Firefox
   - [ ] test
 
