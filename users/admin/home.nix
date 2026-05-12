@@ -23,10 +23,11 @@
     read -p "Press enter to close..."
   '';
 
-  # Make it executable
   home.activation.makeScriptExecutable = {
-    path = "$HOME/bin/update-nixos.sh";
-  };
+     text = ''
+       chmod +x $HOME/bin/update-nixos.sh
+     '';
+   };
 
   # 2. Add a .desktop launcher on Desktop
   home.file."Desktop/Update NixOS.desktop".text = ''
