@@ -11,8 +11,7 @@
       "/var/lib/bluetooth"       # Keeps your headphones/mouse paired
       "/var/lib/networkmanager"  # Keeps your Wi-Fi connections and passwords
       "/var/lib/nixos"           # Keeps track of system state/uid mappings
-
-      "/var/lib/nix"      # Keeps the binary cache metadata and DB
+      # "/var/lib/nix"      # It's another partition separated from Root it's ok to remove it see /partition file from disko
     ];
 
     # SYSTEM FILES

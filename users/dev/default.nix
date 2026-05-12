@@ -1,6 +1,6 @@
 { inputs, username, ... }: {
   imports = [
-    inputs.home-manager.nixosModules.home-manager
+    # inputs.home-manager.nixosModules.home-manager
     ../../modules/microvm/cli.nix
   ];
 
@@ -16,7 +16,7 @@
     extraSpecialArgs = { inherit inputs username; };
     users."${username}" = {
       imports = [
-        inputs.plasma-manager.homeManagerModules.plasma-manager
+        # inputs.plasma-manager.homeManagerModules.plasma-manager
         ./home.nix
       ];
     };
@@ -27,7 +27,6 @@
     users."${username}" = {
       directories = [
         "Documents"
-        "Downloads"
         "Pictures"
         "Videos"
       ];
