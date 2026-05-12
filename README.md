@@ -15,13 +15,13 @@ What i will not care abt :
 - User management, (only two user , dev & admin) as it's going to be on one pc only i will not bother about user creation / supression
 
 Security features :
-[x] Secure Boot (self signing certification & bios / firmware update)
+[X] Secure Boot (self signing certification & bios / firmware update)
 
 QOL Features :
-[x] COSMIC UI with persistant configuration
+[X] COSMIC UI with persistant configuration
 
 Applications :
-[] Firefox
-- [] test
+[ ] Firefox
+- [ ] test
 
 Nix Dependencies :
