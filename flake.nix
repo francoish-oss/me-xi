@@ -30,6 +30,7 @@
   outputs = { self, nixpkgs, nixos-hardware, microvm, impermanence, disko, ... }@inputs: {
     nixosConfigurations.dell-xps-9380 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+
       specialArgs = {
         inherit inputs;
         username = "f";
@@ -60,7 +61,6 @@
         # 4. Theme (bc why not)
         # TODO
       ];
-      system.stateVersion = "25.11";
     };
 
 
