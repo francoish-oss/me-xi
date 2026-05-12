@@ -23,11 +23,9 @@
     read -p "Press enter to close..."
   '';
 
-  home.activation.makeScriptExecutable = {
-     text = ''
-       chmod +x $HOME/bin/update-nixos.sh
-     '';
-   };
+  home.activation.makeScriptExecutable = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      $DRY_RUN_CMD chmod +x $HOME/bin/update-nixos.sh
+    '';
 
   # 2. Add a .desktop launcher on Desktop
   home.file."Desktop/Update NixOS.desktop".text = ''
