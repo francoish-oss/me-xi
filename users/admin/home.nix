@@ -1,9 +1,8 @@
 { lib, pkgs, ... }:
 
 {
-  home.stateVersion = "25.11"; # Note: Ensure this matches your actual HM version
+  home.stateVersion = "25.11";
 
-  # Combine text and executable into ONE definition
   home.file."bin/update-nixos.sh" = {
     executable = true;
     text = ''
