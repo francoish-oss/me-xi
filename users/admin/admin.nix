@@ -17,6 +17,8 @@
         "Downloads"
         "Pictures"
         "Videos"
+        ".config/cosmic"
+        ".local/share/cosmic"
       ];
       files = [ ];
     };
