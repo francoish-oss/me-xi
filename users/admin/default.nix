@@ -16,7 +16,7 @@
   home-manager = {
     backupFileExtension = "before-nix-reset";
     extraSpecialArgs = { inherit inputs adminusername; };
-    users."${username}" = {
+    users."${adminusername}" = {
       imports = [
         ./home.nix
       ];
