@@ -1,22 +1,17 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, config, ... }:
 
-{
-  home.stateVersion = "25.11";
-
-  home.file."bin/update-nixos.sh" = {
-    executable = true;
+let
+  # This creates a "package" out of your script
+  updateScript = pkgs.writeShellApplication {
+    name = "update-nixos"; # The command will be 'update-nixos'
+    runtimeInputs = [ pkgs.sudo pkgs.nix ]; # Tools the script needs
     text = ''
-      #!/usr/bin/env bash
-
-      # 1. Remount /boot as Read-Write
       echo "🔓 Unlocking /boot..."
       sudo mount -o remount,rw /boot
 
-      # 2. Run the NixOS Switch
       echo "❄️ Starting NixOS Rebuild..."
       sudo nixos-rebuild switch
 
-      # 3. Remount /boot as Read-Only
       echo "🔒 Locking /boot..."
       sudo mount -o remount,ro /boot
 
@@ -24,12 +19,19 @@
       read -p "Press enter to close..."
     '';
   };
+in
+{
+  home.stateVersion = "24.11";
 
-  # The Desktop launcher
+  # 1. Add the script package to your user profile
+  # This puts it in /etc/profiles/per-user/$USER/bin (which is persistent)
+  home.packages = [ updateScript ];
+
+  # 2. Update the .desktop launcher to use the package path
   home.file."Desktop/Update NixOS.desktop".text = ''
     [Desktop Entry]
     Name=Update NixOS
-    Exec=bash ${config.home.homeDirectory}/bin/update-nixos.sh
+    Exec=${lib.getExe updateScript}
     Type=Application
     Terminal=true
     Icon=system-run
