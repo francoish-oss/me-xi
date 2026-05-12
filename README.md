@@ -31,6 +31,5 @@ Nix Dependencies :
 - Home manager
 - Lanzaboote v1.0.0
 - MicroVM
-- Stylix
 - Impermanence
 - Disko
