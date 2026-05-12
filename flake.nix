@@ -30,6 +30,7 @@
   outputs = { self, nixpkgs, nixos-hardware, home-manager, microvm, impermanence, disko, ... }@inputs: {
     nixosConfigurations.dell-xps-9380 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      boot.plymouth.enable = true;
 
       specialArgs = {
         inherit inputs;
