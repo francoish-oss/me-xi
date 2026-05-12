@@ -27,7 +27,7 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, microvm, impermanence, disko, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, microvm, impermanence, disko, ... }@inputs: {
     nixosConfigurations.dell-xps-9380 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -41,6 +41,7 @@
         nixos-hardware.nixosModules.dell-xps-13-9380
         impermanence.nixosModules.impermanence
         disko.nixosModules.disko
+        home-manager.nixosModules.home-manager
 
         # 1. Hardware & System Core
         ./configuration.nix
