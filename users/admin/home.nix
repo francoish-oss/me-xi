@@ -21,10 +21,9 @@ let
   };
 in
 {
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.11";
 
   # 1. Add the script package to your user profile
-  # This puts it in /etc/profiles/per-user/$USER/bin (which is persistent)
   home.packages = [ updateScript ];
 
   # 2. Update the .desktop launcher to use the package path
