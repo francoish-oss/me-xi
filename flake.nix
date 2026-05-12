@@ -10,10 +10,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
+    # plasma-manager = {
+    #   url = "github:nix-community/plasma-manager";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.home-manager.follows = "home-manager";
+    # };
+    #
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     microvm.url = "github:microvm-nix/microvm.nix";
@@ -27,7 +32,7 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, microvm, impermanence, disko, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-hardware, lanzaboote, home-manager, microvm, impermanence, disko, ... }@inputs: {
     nixosConfigurations.dell-xps-9380 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -42,6 +47,7 @@
         impermanence.nixosModules.impermanence
         disko.nixosModules.disko
         home-manager.nixosModules.home-manager
+        lanzaboote.nixosModules.lanzaboote
 
         # 1. Hardware & System Core
         ./configuration.nix

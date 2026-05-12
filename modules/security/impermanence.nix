@@ -12,6 +12,7 @@
       "/var/lib/networkmanager"  # Keeps your Wi-Fi connections and passwords
       "/var/lib/nixos"           # Keeps track of system state/uid mappings
 
+      "/var/lib/sbctl"
       # "/var/lib/nix"      # It's another partition separated from Root it's ok to remove it see /partition file from disko
     ];
 

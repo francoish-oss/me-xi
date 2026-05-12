@@ -6,5 +6,6 @@
     ./root.nix
     ./sudo.nix
     ./impermanence.nix
+    ./secureboot.nix
   ];
 }
