@@ -32,6 +32,7 @@
         ".config/cosmic"
         ".local/share/cosmic"
         ".local/state/cosmic"
+        ".local/share/keyrings" # Need for wifi
       ];
       files = [
         ".config/cosmic-initial-setup-done"
