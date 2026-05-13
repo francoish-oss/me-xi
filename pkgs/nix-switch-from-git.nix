@@ -3,7 +3,7 @@
 let
   # We define the script exactly as you have it
   updateScript = pkgs.writeShellApplication {
-    name = "update-nixos";
+    name = "nix-switch-from-git";
     runtimeInputs = [
       pkgs.sudo
       pkgs.nix
