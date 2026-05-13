@@ -1,18 +1,13 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
-}:
+{ pkgs, ... }:
 
 let
-  # This creates a "package" out of your script
+  # We define the script exactly as you have it
   updateScript = pkgs.writeShellApplication {
-    name = "update-nixos"; # The command will be 'update-nixos'
+    name = "update-nixos";
     runtimeInputs = [
       pkgs.sudo
       pkgs.nix
-    ]; # Tools the script needs
+    ];
     text = ''
       echo "🔓 Unlocking /boot..."
       sudo mount -o remount,rw /boot
@@ -29,9 +24,7 @@ let
   };
 in
 {
-  home.stateVersion = "25.11";
   home.packages = [
     updateScript
-    pkgs.vulnix
   ];
 }
