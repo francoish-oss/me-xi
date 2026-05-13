@@ -54,7 +54,6 @@
         ./users/dev
 
         # 3. System
-        # ./modules/desktop/kde.nix
         ./modules/desktop/cosmic.nix
         ./modules/security
 
