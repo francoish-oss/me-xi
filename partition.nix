@@ -26,8 +26,7 @@
               content = {
                 type = "luks";
                 name = "crypted";
-                extraOpenArgs = [ "--allow-discards" ];
-                crypttabExtraOpts = [ "tpm2-device=auto" ];
+                extraOpenArgs = [ "--allow-discards" "--tpm2-device=auto" ];
                 content = {
                   type = "btrfs";
                   extraArgs = [ "-f" ]; # Force override
