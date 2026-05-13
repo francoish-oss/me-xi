@@ -5,7 +5,7 @@
     git
   ];
 
-  home.persistence."/persist" = {
+  home.persistence."/persist${config.home.homeDirectory}" = {
     hideMounts = true;
     users."${config.home.username}" = {
       directories = [
