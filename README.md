@@ -16,6 +16,7 @@ What i will not care abt :
 
 Security features :
 - [X] Secure Boot (self signing certification & bios / firmware update)
+- [ ] Local .ssh keys off (SSH Agent Mandatory)
 
 QOL Features :
 - [X] Auto Realese LUKS TPM2 {0+7}

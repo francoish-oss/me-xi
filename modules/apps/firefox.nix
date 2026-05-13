@@ -26,24 +26,4 @@
       };
     };
   };
-
-  # programs.plasma.desktop.widgets = [
-  #       {
-  #         name = "org.kde.plasma.icon";
-  #         position = {
-  #           horizontal = 100;
-  #           vertical = 100;
-  #         };
-  #         size = {
-  #                   width = 50;
-  #                   height = 50;
-  #                 };
-  #         config = {
-  #           General = {
-  #             # Use the .desktop file path or name
-  #             url = "applications:firefox.desktop";
-  #           };
-  #         };
-  #       }
-  # ];
 }

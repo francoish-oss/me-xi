@@ -7,5 +7,6 @@
     ./sudo.nix
     ./impermanence.nix
     ./secureboot.nix
+    ./bitwarden-ssh-agent.nix
   ];
 }
