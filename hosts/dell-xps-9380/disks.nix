@@ -101,6 +101,9 @@
   #   umount /btrfs_tmp
   # '';
 
+  fileSystems."/persist".neededForBoot = true;
+  fileSystems."/nix".neededForBoot = true;
+
   boot.initrd.systemd.services.rollback = {
     description = "Rollback Btrfs root subvolume";
     wantedBy = [ "initrd.target" ];
