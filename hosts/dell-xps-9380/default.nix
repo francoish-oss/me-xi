@@ -8,5 +8,6 @@
     ./network.nix
   ];
 
+  boot.initrd.systemd.enable = true;
   system.stateVersion = "25.11";
 }
