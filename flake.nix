@@ -28,7 +28,6 @@
   outputs = { self, nixpkgs, nixos-hardware, lanzaboote, home-manager, microvm, impermanence, disko, ... }@inputs: {
     nixosConfigurations.dell-xps-9380 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      boot.initrd.availableKernelModules = [ "tpm_crb" "tpm_tis" ]; # TPM for Dell
 
       specialArgs = {
         inherit inputs;
