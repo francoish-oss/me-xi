@@ -16,6 +16,7 @@ What i will not care abt :
 
 Security features :
 - [X] Secure Boot (self signing certification & bios / firmware update)
+- [X] Auto Realese LUKS TPM2 {0+7}
 
 QOL Features :
 - [X] COSMIC UI with persistant configuration
