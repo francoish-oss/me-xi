@@ -17,8 +17,6 @@
 
     files = [
       "/etc/machine-id" # This is unique to your hardware install
-      "/etc/shadow"
-      "/etc/passwd"
     ];
   };
 
