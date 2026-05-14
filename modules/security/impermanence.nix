@@ -8,7 +8,10 @@
     directories = [
       "/var/log" # Keeps system logs so you can troubleshoot crashes
       "/var/lib/bluetooth" # Keeps your headphones/mouse paired
+
       "/var/lib/networkmanager" # Keeps your Wi-Fi connections and passwords
+      "/var/lib/NetworkManager" # Somehow it's with caps ...
+
       "/var/lib/nixos" # Keeps track of system state/uid mappings
 
       "/var/lib/sbctl"
