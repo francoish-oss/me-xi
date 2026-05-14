@@ -1,5 +1,9 @@
 { pkgs, config, ... }:
 {
+  imports = [
+    ../../../apps/bitwarden.nix
+  ];
+
   # Packages specific to developers
   home.packages = with pkgs; [
     git
