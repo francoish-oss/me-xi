@@ -24,7 +24,7 @@
 
 - [X] **Permission mgts** Restrict sudo
 
-- [X] **SSH** Disabled local SSH Agent
+- [X] **SSH** Forbide local SSH Agent
 
 - [X] **Kernel** Hardened Kernel
 - [X] **Kernel** Blacklist Old/Legacy Kernel Modules
