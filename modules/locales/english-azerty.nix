@@ -25,6 +25,11 @@
     variant = "azerty";
   };
 
+  environment.sessionVariables = {
+    XKB_DEFAULT_LAYOUT = "fr";
+    XKB_DEFAULT_VARIANT = "azerty";
+  };
+
   # Configure console keymap (the TTY before the desktop loads)
   console.keyMap = "fr";
 }
