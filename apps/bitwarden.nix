@@ -15,13 +15,17 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    extraConfig = ''
-      Host *
-        IdentityFile /dev/null
-        IdentitiesOnly yes
-        # Use the environment variable directly
-        IdentityAgent ''${XDG_RUNTIME_DIR}/rbw/ssh-agent-socket
-    '';
+
+    matchBlocks = {
+      "*" = {
+        identitiesOnly = true;
+
+        extraOptions = {
+          IdentityFile = "/dev/null";
+          IdentityAgent = "\${XDG_RUNTIME_DIR}/rbw/ssh-agent-socket";
+        };
+      };
+    };
   };
 
   systemd.user.services.rbw-agent = {
