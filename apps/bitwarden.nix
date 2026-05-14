@@ -1,9 +1,4 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}:
+{ pkgs, config, ... }:
 
 {
   home.packages = with pkgs; [
@@ -11,35 +6,30 @@
     pinentry-gnome3
   ];
 
-  # Force the environment to ONLY see rbw
   home.sessionVariables = {
-    SSH_AUTH_SOCK = "${config.home.sessionVariables.XDG_RUNTIME_DIR}/rbw/ssh-agent-socket";
+    # We use the shell variable $XDG_RUNTIME_DIR here so it evaluates at runtime
+    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/rbw/ssh-agent-socket";
     SSH_AUTH_ONLY = "yes";
   };
 
   programs.ssh = {
     enable = true;
-    # This prevents Home Manager from trying to be "helpful" with other agents
-    controlMaster = "no";
-
     extraConfig = ''
       Host *
-        # Ensure we never look at ~/.ssh for keys
+        # Hard-blindfold SSH from local files
         IdentityFile /dev/null
         IdentitiesOnly yes
-        # Trust the agent socket defined in sessionVariables
-        IdentityAgent ${config.home.sessionVariables.XDG_RUNTIME_DIR}/rbw/ssh-agent-socket
+        # Explicitly point to the rbw socket
+        IdentityAgent /run/user/${toString config.home.uid}/rbw/ssh-agent-socket
     '';
   };
 
-  # The "Clean Fix": Ensure rbw is the ONLY agent running
   systemd.user.services.rbw-agent = {
     Unit = {
       Description = "rbw ssh-agent wrapper";
-      # Make sure it starts before you try to use SSH
-      Before = [ "ssh-agent.service" ];
     };
     Service = {
+      # Use full path to the binary to ensure it starts correctly
       ExecStart = "${pkgs.rbw}/bin/rbw agent";
       Restart = "on-failure";
     };
@@ -48,7 +38,6 @@
     };
   };
 
-  # Persist only the rbw credentials/config
   home.persistence."/persist" = {
     allowOther = true;
     directories = [
