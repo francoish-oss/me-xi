@@ -40,7 +40,9 @@
         }:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs hostName; };
+          specialArgs = {
+            inherit inputs hostName;
+          };
           modules = [
             # 1. The Host Entry Point (Imports hardware, users, and specific modules)
             ./hosts/${hostName}
@@ -64,6 +66,8 @@
       nixosConfigurations = {
 
         "dell-xps-9380" = mkHost "dell-xps-9380" {
+          device = "/dev/nvme0n1";
+
           hardwareModules = [
             inputs.nixos-hardware.nixosModules.dell-xps-13-9380
             inputs.lanzaboote.nixosModules.lanzaboote
@@ -74,6 +78,13 @@
             ./users/defs/f.nix
             ./users/defs/fadmin.nix
           ];
+        };
+      };
+
+      diskoConfigurations = {
+        "dell-xps-9380" = import ./hosts/dell-xps-9380/disks.nix {
+          # Pass the device here if your disko file is a function
+          device = "/dev/nvme0n1";
         };
       };
 
