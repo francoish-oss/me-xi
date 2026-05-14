@@ -12,6 +12,10 @@
 # Desktop
 - [X] Cosmic
 
+# Packages
+
+# Apps
+
 # Locales
 - [X] English Azerty (Wayland + X11 + TTY..)
 

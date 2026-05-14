@@ -51,6 +51,7 @@
             ./modules/security/secureboot.nix
             ./modules/security/impermanence.nix
             ./modules/security/restrict-sudo.nix
+            ./modules/security/disabled-ssh.nix
             ./modules/locales/english-azerty.nix
 
             # 3. Dynamic Inputs (External modules passed here)
