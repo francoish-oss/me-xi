@@ -66,8 +66,6 @@
       nixosConfigurations = {
 
         "dell-xps-9380" = mkHost "dell-xps-9380" {
-          device = "/dev/nvme0n1";
-
           hardwareModules = [
             inputs.nixos-hardware.nixosModules.dell-xps-13-9380
             inputs.lanzaboote.nixosModules.lanzaboote
