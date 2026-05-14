@@ -49,6 +49,7 @@
 
             # 2. Global Modules (Things every machine gets)
             ./modules/security/secureboot.nix
+            ./modules/security/keyring.nix
             ./modules/security/impermanence.nix
             ./modules/security/restrict-sudo.nix
             ./modules/locales/english-azerty.nix
