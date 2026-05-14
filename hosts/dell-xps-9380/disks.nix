@@ -29,7 +29,6 @@
                 name = "crypted";
                 extraOpenArgs = [
                   "--allow-discards"
-                  "--tpm2-device=auto"
                 ];
                 content = {
                   type = "btrfs";
