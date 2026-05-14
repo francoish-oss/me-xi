@@ -13,7 +13,7 @@
 - [X] Cosmic
 
 # Locales
-- [X] English Azerty
+- [X] English Azerty (Wayland + X11 + TTY..)
 
 # Security
 - [X] **Unrot / Malware** Impermanence
