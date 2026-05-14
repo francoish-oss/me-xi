@@ -7,7 +7,6 @@
 - [X] TPM2 Kernel Module
 - [X] i915 Kernel Module
 - [X] Disko cfg
-- [X] Auto realease TPM2 LUKS Key {0+7}
 - [X] NixOS Hardware Repo CFG "micropatch, battery..."
 
 # Desktop
