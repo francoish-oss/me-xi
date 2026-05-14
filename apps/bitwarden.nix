@@ -38,7 +38,6 @@
   };
 
   home.persistence."/persist" = {
-    allowOther = true;
     directories = [
       ".config/rbw"
     ];
