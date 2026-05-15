@@ -26,11 +26,15 @@
         identitiesOnly = true;
 
         extraOptions = {
-          # IdentityFile = "/dev/null";
-          IdentityAgent = "/run/user/1000/rbw/ssh-agent-socket";
+          # Point the IdentityAgent to your rbw socket
+          IdentityAgent = "/run/user/1000/rbw/ssh-agent";
+
+          # This forces OpenSSH to look ONLY at the agent.
+          IdentityFile = "/dev/null";
         };
       };
     };
+
   };
 
   systemd.user.services.rbw-agent = {
