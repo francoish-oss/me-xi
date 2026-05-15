@@ -48,6 +48,7 @@
             ./hosts/${hostName}
 
             # 2. Global Modules (Things every machine gets)
+            ./modules/system/nix-settings.nix
             ./modules/security/secureboot.nix
             ./modules/security/keyring.nix
             ./modules/security/impermanence.nix
@@ -73,7 +74,6 @@
           ];
           extraModules = [
             ./modules/desktop/cosmic.nix
-            ./modules/desktop/cosmic-greeter.nix
             ./users/defs/f.nix
             ./users/defs/fadmin.nix
           ];
