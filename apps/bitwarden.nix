@@ -6,8 +6,13 @@
     pinentry-gnome3
   ];
 
+  # Need the doublon to overwrite the gnome keyring
+  systemd.user.sessionVariables = {
+    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/rbw/ssh-agent-socket";
+    SSH_AUTH_ONLY = "yes";
+  };
+
   home.sessionVariables = {
-    # We use the shell variable $XDG_RUNTIME_DIR here so it evaluates at runtime
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/rbw/ssh-agent-socket";
     SSH_AUTH_ONLY = "yes";
   };
