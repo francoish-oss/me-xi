@@ -23,12 +23,14 @@
 
     matchBlocks = {
       "*" = {
+        # Flip this back to true to lock down disk access
         identitiesOnly = true;
 
         extraOptions = {
           # Point the IdentityAgent to your rbw socket
-          IdentityAgent = "/run/user/1000/rbw/ssh-agent";
+          IdentityAgent = "/run/user/1000/rbw/ssh-agent-socket";
 
+          # Point the IdentityFile to the void.
           # This forces OpenSSH to look ONLY at the agent.
           IdentityFile = "/dev/null";
         };
