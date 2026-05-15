@@ -45,6 +45,7 @@
   home.persistence."/persist" = {
     directories = [
       ".config/rbw"
+      ".local/share/rbw"
     ];
   };
 }
