@@ -27,7 +27,7 @@
 
         extraOptions = {
           # IdentityFile = "/dev/null";
-          IdentityAgent = "/run/user-by-name/${config.home.username}/rbw/ssh-agent-socket";
+          IdentityAgent = "/run/user/1000/rbw/ssh-agent-socket";
         };
       };
     };
