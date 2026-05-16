@@ -55,6 +55,8 @@
             ./modules/security/restrict-sudo.nix
             ./modules/locales/english-azerty.nix
 
+            ./pkgs/nix-switch-from-git.nix
+
             # 3. Dynamic Inputs (External modules passed here)
             inputs.disko.nixosModules.disko
             inputs.impermanence.nixosModules.impermanence
