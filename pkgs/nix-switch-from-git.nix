@@ -31,12 +31,14 @@ in
     updateScript
   ];
 
+  users.groups.updater = { };
+
+  # 2. Allow anyone in the 'updater' group to run ONLY this script
   security.sudo = {
     enable = true;
     extraRules = [
       {
-        # 2. Grant the rule to all normal users dynamically
-        users = normalUsernames;
+        groups = [ "updater" ];
         commands = [
           {
             command = "${updateScript}/bin/nix-switch-from-git";
