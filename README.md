@@ -15,16 +15,16 @@
 # Packages
 
 # Apps
+- [X] rbw (Bitwarden)
+
+# Nix Settings
+- [X] Garbage collector 7d keep 3
 
 # Locales
 - [X] English Azerty (Wayland + X11 + TTY..)
 
 # Security
 - [X] **Unrot / Malware** Impermanence
-
 - [X] **Permission mgts** Restrict sudo
-
-- [X] **SSH** Forbide local SSH Agent
-
 - [X] **Kernel** Hardened Kernel
 - [X] **Kernel** Blacklist Old/Legacy Kernel Modules
