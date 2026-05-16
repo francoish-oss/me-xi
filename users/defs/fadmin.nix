@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 {
   imports = [
-    ../roles/dev/apps.nix
+    ../roles/apps/apps.nix
   ];
 
   users.users.fadmin = {
