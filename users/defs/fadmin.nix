@@ -1,5 +1,9 @@
 { pkgs, inputs, ... }:
 {
+  imports = [
+    ../roles/dev/apps.nix
+  ];
+
   users.users.fadmin = {
     isNormalUser = true;
     description = "System Administrator";
@@ -14,7 +18,7 @@
 
   home-manager.users.fadmin = {
     imports = [
-      ../roles/admin
+      ../roles/admin/home.nix
     ];
 
     home.username = "fadmin";

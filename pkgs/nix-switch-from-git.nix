@@ -1,10 +1,6 @@
 { pkgs, config, ... }:
 
 let
-  normalUsernames = builtins.attrNames (
-    pkgs.lib.attrsets.filterAttrs (_: u: u.isNormalUser) config.users.users
-  );
-
   updateScript = pkgs.writeShellApplication {
     name = "nix-switch-from-git";
     runtimeInputs = [
