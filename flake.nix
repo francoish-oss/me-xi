@@ -76,6 +76,7 @@
           ];
           extraModules = [
             ./modules/desktop/cosmic.nix
+            ./modules/desktop/tty-greeter.nix
             # ./modules/desktop/cosmic-greeter.nix
             ./users/defs/f.nix
             ./users/defs/fadmin.nix
