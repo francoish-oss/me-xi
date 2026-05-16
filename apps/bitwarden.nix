@@ -24,7 +24,7 @@
     matchBlocks = {
       "*" = {
         extraOptions = {
-          IdentityAgent = "/run/user/1000/rbw/ssh-agent-socket";
+          IdentityAgent = "\${XDG_RUNTIME_DIR}/rbw/ssh-agent-socket";
         };
       };
     };
