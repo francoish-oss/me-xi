@@ -53,9 +53,26 @@ in
           options = [ "NOPASSWD" ];
         }
 
-        "/run/current-system/sw/bin/mount -o remount,rw /boot"
+        {
+          command = "/run/current-system/sw/bin/mount";
+          options = [ "NOPASSWD" ];
+          args = [
+            "-o"
+            "remount,rw"
+            "/boot"
+          ];
+        }
 
-        "/run/current-system/sw/bin/mount -o remount,ro /boot"
+        {
+          command = "/run/current-system/sw/bin/mount";
+          options = [ "NOPASSWD" ];
+          args = [
+            "-o"
+            "remount,ro"
+            "/boot"
+          ];
+        }
+
       ];
     }
   ];
