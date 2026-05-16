@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
     ./disks.nix
@@ -9,10 +9,7 @@
     ./bluetooth.nix
   ];
 
-  console = {
-    font = "ter-v32b";
-    packages = [ pkgs.terminus_font ];
-  };
+  hardware.video.hidpi.enable = true;
 
   system.stateVersion = "25.11";
 }
