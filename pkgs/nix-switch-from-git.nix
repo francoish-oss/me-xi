@@ -49,15 +49,7 @@ in
 
       commands = [
         {
-          command = "/run/current-system/sw/bin/nixos-rebuild";
-          options = [ "NOPASSWD" ];
-        }
-        {
-          command = "/run/current-system/sw/bin/mount -o remount,rw /boot";
-          options = [ "NOPASSWD" ];
-        }
-        {
-          command = "/run/current-system/sw/bin/mount -o remount,ro /boot";
+          command = "${updateScript}/bin/updateScript-rebuild";
           options = [ "NOPASSWD" ];
         }
       ];
