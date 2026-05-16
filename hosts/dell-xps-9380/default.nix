@@ -14,7 +14,5 @@
     font = "latarcyrheb-sun32";
   };
 
-  boot.loader.grub.fontSize = 128;
-
   system.stateVersion = "25.11";
 }
