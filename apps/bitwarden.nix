@@ -28,8 +28,8 @@
 
         extraOptions = {
           # Point the IdentityAgent to your rbw socket
-          IdentityAgent = "$XDG_RUNTIME_DIR/rbw/ssh-agent-socket";
-
+          IdentityAgent = "${config.home.homeDirectory}/rbw/ssh-agent-socket";
+          # Point the IdentityAgent to your rbw socket
           # Point the IdentityFile to the void.
           # This forces OpenSSH to look ONLY at the agent.
           IdentityFile = "/dev/null";

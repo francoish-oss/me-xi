@@ -23,6 +23,7 @@
     files = [
       ".config/cosmic-initial-setup-done"
     ];
+
     # };
   };
 

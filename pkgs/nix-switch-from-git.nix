@@ -1,7 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
-  # We define the script exactly as you have it
+  normalUsernames = builtins.attrNames (
+    pkgs.lib.attrsets.filterAttrs (_: u: u.isNormalUser) config.users.users
+  );
+
   updateScript = pkgs.writeShellApplication {
     name = "nix-switch-from-git";
     runtimeInputs = [
@@ -27,4 +30,20 @@ in
   home.packages = [
     updateScript
   ];
+
+  security.sudo = {
+    enable = true;
+    extraRules = [
+      {
+        # 2. Grant the rule to all normal users dynamically
+        users = normalUsernames;
+        commands = [
+          {
+            command = "${updateScript}/bin/nix-switch-from-git";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+      }
+    ];
+  };
 }
