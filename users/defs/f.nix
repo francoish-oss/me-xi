@@ -10,7 +10,6 @@
     extraGroups = [
       "networkmanager"
       "video"
-      "updater"
     ];
     initialPassword = "123456";
   };

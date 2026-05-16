@@ -11,7 +11,6 @@
       "networkmanager"
       "wheel"
       "libvirtd"
-      "updater"
     ];
     initialPassword = "123456";
   };
