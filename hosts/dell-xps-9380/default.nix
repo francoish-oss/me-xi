@@ -14,6 +14,7 @@
     font = "latarcyrheb-sun32";
   };
 
-  boot.kernelParams = [ "video=eDP-1:1280x720@60" ];
+  boot.loader.grub.fontSize = 32;
+
   system.stateVersion = "25.11";
 }
