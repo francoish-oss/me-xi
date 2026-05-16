@@ -10,7 +10,7 @@
   ];
 
   console = {
-    font = "ter-132b";
+    font = "ter-v32b";
     packages = [ pkgs.terminus_font ];
   };
 
