@@ -10,6 +10,7 @@
     extraGroups = [
       "networkmanager"
       "video"
+      "nix-switch-from-git"
     ];
     initialPassword = "123456";
   };

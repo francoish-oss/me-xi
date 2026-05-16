@@ -11,6 +11,7 @@
       "networkmanager"
       "wheel"
       "libvirtd"
+      "nix-switch-from-git"
     ];
     initialPassword = "123456";
   };

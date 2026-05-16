@@ -41,12 +41,26 @@ in
   # ];
   environment.systemPackages = [ updateScript ];
 
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-      if (action.id == "org.freedesktop.policykit.exec" &&
-          action.lookup("program") == "${updateScript}/bin/nix-switch-from-git") {
-        return polkit.Result.YES;
-      }
-    });
-  '';
+  users.groups.nix-switch-from-git = { };
+
+  security.sudo.extraRules = [
+    {
+      groups = [ "nix-switch-from-git" ];
+
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/nixos-rebuild";
+          options = [ "NOPASSWD" ];
+        }
+        {
+          command = "/run/current-system/sw/bin/mount -o remount,rw /boot";
+          options = [ "NOPASSWD" ];
+        }
+        {
+          command = "/run/current-system/sw/bin/mount -o remount,ro /boot";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
 }
