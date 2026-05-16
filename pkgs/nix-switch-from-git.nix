@@ -52,27 +52,14 @@ in
           command = "/run/current-system/sw/bin/nixos-rebuild";
           options = [ "NOPASSWD" ];
         }
-
         {
-          command = "/run/current-system/sw/bin/mount";
+          command = "/run/current-system/sw/bin/mount -o remount,rw /boot";
           options = [ "NOPASSWD" ];
-          args = [
-            "-o"
-            "remount,rw"
-            "/boot"
-          ];
         }
-
         {
-          command = "/run/current-system/sw/bin/mount";
+          command = "/run/current-system/sw/bin/mount -o remount,ro /boot";
           options = [ "NOPASSWD" ];
-          args = [
-            "-o"
-            "remount,ro"
-            "/boot"
-          ];
         }
-
       ];
     }
   ];
