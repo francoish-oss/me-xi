@@ -1,12 +1,7 @@
 { ... }:
 {
-  # Enable the hardware support, but...
-  hardware.bluetooth.enable = true;
-
-  # ...tell the system NOT to power it on automatically at boot.
-  hardware.bluetooth.settings = {
-    General = {
-      AutoEnable = false;
-    };
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false; # This keeps bluetooth disabled when you turn on the PC
   };
 }
