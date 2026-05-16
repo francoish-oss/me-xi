@@ -19,11 +19,6 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  i18n.console = {
-    enable = true;
-    font = "latarcyrheb-sun32";
-  };
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "fr";
