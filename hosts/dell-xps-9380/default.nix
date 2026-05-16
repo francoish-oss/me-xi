@@ -14,5 +14,10 @@
     font = "latarcyrheb-sun32";
   };
 
+  boot.loader.grub = {
+    enable = true;
+    gfxmodeBios = "1280x720";
+  };
+
   system.stateVersion = "25.11";
 }
