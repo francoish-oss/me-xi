@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./disks.nix
@@ -10,8 +10,8 @@
   ];
 
   console = {
-    enable = true;
-    font = "latarcyrheb-sun32";
+    font = "ter-132b";
+    packages = [ pkgs.terminus_font ];
   };
 
   system.stateVersion = "25.11";
