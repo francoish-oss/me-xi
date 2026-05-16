@@ -14,7 +14,6 @@
     font = "latarcyrheb-sun32";
   };
 
-  boot.kernelParams = [ "video=1280x720@60" ];
-
+  boot.kernelParams = [ "video=eDP-1:1280x720@60" ];
   system.stateVersion = "25.11";
 }
