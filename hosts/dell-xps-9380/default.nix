@@ -9,5 +9,10 @@
     ./bluetooth.nix
   ];
 
+  console = {
+    enable = true;
+    font = "latarcyrheb-sun32";
+  };
+
   system.stateVersion = "25.11";
 }
