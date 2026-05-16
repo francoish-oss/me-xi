@@ -14,10 +14,7 @@
     font = "latarcyrheb-sun32";
   };
 
-  boot.loader.grub = {
-    enable = true;
-    gfxmodeBios = "1280x720";
-  };
+  boot.kernelParams = [ "video=1280x720@60" ];
 
   system.stateVersion = "25.11";
 }
