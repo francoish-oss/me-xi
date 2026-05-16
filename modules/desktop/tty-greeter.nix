@@ -1,8 +1,5 @@
 { ... }:
 
 {
-  programs.bash = {
-    enable = true;
-    profileExtra = "exec start-cosmic";
-  };
+  programs.bash.loginShellInit = "exec start-cosmic";
 }
