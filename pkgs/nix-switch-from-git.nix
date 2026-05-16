@@ -23,9 +23,10 @@ let
   };
 in
 {
-  home.packages = [
-    updateScript
-  ];
+  # home.packages = [
+  #   updateScript
+  # ];
+  environment.systemPackages = [ updateScript ];
 
   users.groups.updater = { };
 
