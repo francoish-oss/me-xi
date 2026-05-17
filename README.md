@@ -15,7 +15,10 @@
 # Packages
 
 # Apps
-- [X] rbw (Bitwarden)
+- [X] rbw (Bitwarden) + pinentry-gnome3
+- [X] bubblewrap
+
+- [ ] firefox
 
 # Nix Settings
 - [X] Garbage collector 7d keep 3
