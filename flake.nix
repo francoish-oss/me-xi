@@ -49,6 +49,8 @@
 
             # 2. Global Modules (Things every machine gets)
             ./modules/system/nix-settings.nix
+            ./modules/system/wireguard.nix
+
             ./modules/security/secureboot.nix
             ./modules/security/keyring.nix
             ./modules/security/impermanence.nix
