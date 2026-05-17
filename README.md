@@ -17,7 +17,6 @@
 # Apps
 - [X] rbw (Bitwarden) + pinentry-gnome3
 - [X] bubblewrap
-
 - [ ] firefox
 
 # Nix Settings

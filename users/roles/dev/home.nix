@@ -4,7 +4,6 @@
     ../../../apps/bitwarden.nix
     ../../../apps/bwrap.nix
     ../../../apps/firefox.nix
-    ../../../apps/flatpak.nix
   ];
 
   # Packages specific to developers
