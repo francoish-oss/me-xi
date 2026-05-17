@@ -9,13 +9,13 @@ let
     ];
     text = ''
       echo "🔓 Unlocking /boot..."
-      pkexec mount -o remount,rw /boot
+      mount -o remount,rw /boot
 
       echo "❄️ Starting NixOS Rebuild..."
-      pkexec nixos-rebuild switch --flake "github:francoish-oss/me-xi#dell-xps-9380" --refresh
+      nixos-rebuild switch --flake "github:francoish-oss/me-xi#dell-xps-9380" --refresh
 
       echo "🔒 Locking /boot..."
-      pkexec mount -o remount,ro /boot
+      mount -o remount,ro /boot
 
       echo "✅ Done! System is updated and /boot is secured."
       read -rp "Press enter to close..."
