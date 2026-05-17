@@ -9,13 +9,13 @@ let
     ];
     text = ''
       echo "🔓 Unlocking /boot..."
-      mount -o remount,rw /boot
+      pkexec mount -o remount,rw /boot
 
       echo "❄️ Starting NixOS Rebuild..."
-      nixos-rebuild switch --flake "github:francoish-oss/me-xi#dell-xps-9380" --refresh
+      pkexec nixos-rebuild switch --flake "github:francoish-oss/me-xi#dell-xps-9380" --refresh
 
       echo "🔒 Locking /boot..."
-      mount -o remount,ro /boot
+      pkexec mount -o remount,ro /boot
 
       echo "✅ Done! System is updated and /boot is secured."
       read -rp "Press enter to close..."
@@ -39,14 +39,14 @@ in
 
   environment.systemPackages = [ updateScript ];
 
-  security.wrappers.nix-switch-from-git = {
-    owner = "root";
-    group = "root";
-    # This dynamically grabs the absolute store path of your compiled script:
-    source = "${updateScript}/bin/nix-switch-from-git-internal";
-    setuid = true;
-    setgid = false;
-  };
+  # security.wrappers.nix-switch-from-git = {
+  #   owner = "root";
+  #   group = "root";
+  #   # This dynamically grabs the absolute store path of your compiled script:
+  #   source = "${updateScript}/bin/nix-switch-from-git-internal";
+  #   setuid = true;
+  #   setgid = false;
+  # };
 
   # home.packages = [
   #   updateScript
