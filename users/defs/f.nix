@@ -4,6 +4,8 @@
     ../roles/dev/apps.nix
   ];
 
+  services.flatpak.enable = true;
+
   users.users.f = {
     isNormalUser = true;
     description = "Standard Developer User";
