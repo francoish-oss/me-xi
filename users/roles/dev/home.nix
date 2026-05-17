@@ -5,7 +5,6 @@
     ../../../apps/bwrap.nix
     ../../../apps/firefox.nix
     ../../../apps/mpv.nix
-    ../../../apps/tailscale.nix
     ../../../apps/zed.nix
     ../../../apps/minimon.nix
   ];
