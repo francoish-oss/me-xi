@@ -37,6 +37,8 @@ let
 in
 {
 
+  environment.systemPackages = [ updateScript ];
+
   security.wrappers.nix-switch-from-git = {
     owner = "root";
     group = "root";
@@ -45,7 +47,7 @@ in
     setuid = true;
     setgid = false;
   };
-  
+
   # home.packages = [
   #   updateScript
   # ];
