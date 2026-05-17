@@ -36,23 +36,31 @@ let
   };
 in
 {
+
+  security.wrappers.nix-switch-from-git = {
+    owner = "root";
+    group = "root";
+    # This dynamically grabs the absolute store path of your compiled script:
+    source = "${updateScript}/bin/nix-switch-from-git-internal";
+    setuid = true;
+    setgid = false;
+  };
+  
   # home.packages = [
   #   updateScript
   # ];
-  environment.systemPackages = [ updateScript ];
 
-  users.groups.nix-switch-from-git = { };
+  # users.groups.nix-switch-from-git = { };
+  # security.sudo.extraRules = [
+  #   {
+  #     groups = [ "nix-switch-from-git" ];
 
-  security.sudo.extraRules = [
-    {
-      groups = [ "nix-switch-from-git" ];
-
-      commands = [
-        {
-          command = "${updateScript}/bin/updateScript-rebuild";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
+  #     commands = [
+  #       {
+  #         command = "/run/current-system/sw/bin/systemctl start update-from-git@*";
+  #         options = [ "NOPASSWD" ];
+  #       }
+  #     ];
+  #   }
+  # ];
 }
