@@ -2,7 +2,7 @@
 
 let
   updateScript = pkgs.writeShellApplication {
-    name = "nix-switch-from-git";
+    name = "nix-switch-from-git-internal";
     runtimeInputs = [
       pkgs.sudo
       pkgs.nix
