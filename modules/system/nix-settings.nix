@@ -6,6 +6,8 @@
     "flakes"
   ];
 
+  nix.settings.allowed-users = [ "root" ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

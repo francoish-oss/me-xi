@@ -4,6 +4,9 @@
     ../../../apps/bitwarden.nix
     ../../../apps/bwrap.nix
     ../../../apps/firefox.nix
+    ../../../apps/mpv.nix
+    ../../../apps/tailscale.nix
+    ../../../apps/zed.nix
   ];
 
   # Packages specific to developers
