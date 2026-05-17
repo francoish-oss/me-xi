@@ -6,7 +6,7 @@
     "flakes"
   ];
 
-  nix.settings.allowed-users = [ "root" ];
+  nix.settings.allowed-users = [ "@wheel" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
