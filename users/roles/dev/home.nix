@@ -7,6 +7,7 @@
     ../../../apps/mpv.nix
     ../../../apps/tailscale.nix
     ../../../apps/zed.nix
+    ../../../apps/minimon.nix
   ];
 
   # Packages specific to developers
