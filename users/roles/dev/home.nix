@@ -2,11 +2,11 @@
 {
   imports = [
     ../../../apps/bitwarden.nix
+    ../../../apps/bwrap.nix
   ];
 
   # Packages specific to developers
   home.packages = with pkgs; [
-    git
   ];
 
   home.persistence."/persist" = {
