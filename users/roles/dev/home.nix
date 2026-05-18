@@ -4,7 +4,6 @@
     ../../../apps/bitwarden.nix
     ../../../apps/bwrap.nix
     ../../../apps/firefox.nix
-    ../../../apps/mpv.nix
     ../../../apps/zed.nix
     ../../../apps/minimon.nix
   ];
