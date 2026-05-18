@@ -11,6 +11,7 @@
       "networkmanager"
       "video"
       "nix-switch-from-git"
+      "netbird"
     ];
     initialPassword = "123456";
   };
