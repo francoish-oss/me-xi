@@ -8,10 +8,10 @@
     isNormalUser = true;
     description = "Standard Developer User";
     extraGroups = [
+      "netbird-passac"
       "networkmanager"
       "video"
       "nix-switch-from-git"
-      "netbird-passac"
     ];
     initialPassword = "123456";
   };

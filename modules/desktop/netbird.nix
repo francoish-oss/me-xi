@@ -7,5 +7,6 @@
     ui.enable = true;
     # Automatically opens the necessary ports in the NixOS firewall
     openFirewall = true;
+    user.group = "netbird-passac";
   };
 }
