@@ -13,6 +13,7 @@
   environment.persistence."/persist" = {
     directories = [
       "/var/lib/netbird-passac"
+      "/etc/netbird"
     ];
   };
 
