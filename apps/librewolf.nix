@@ -22,9 +22,4 @@
     };
   };
 
-  # 3. Set fallback environment variables
-  environment.sessionVariables = {
-    DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf";
-    BROWSER = "librewolf";
-  };
 }
