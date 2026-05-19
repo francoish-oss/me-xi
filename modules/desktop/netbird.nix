@@ -12,7 +12,12 @@
 
   environment.persistence."/persist" = {
     directories = [
-      "/var/lib/netbird-passac"
+      {
+        directory = "/var/lib/netbird-passac";
+        user = "netbird-passac";
+        group = "netbird-passac";
+        mode = "0700";
+      }
       "/etc/netbird"
     ];
   };
