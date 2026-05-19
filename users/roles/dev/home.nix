@@ -5,6 +5,7 @@
     ../../../apps/bwrap.nix
     ../../../apps/firefox.nix
     ../../../apps/zed.nix
+    ../../../apps/devpod.nix
     ../../../apps/minimon.nix
   ];
 
