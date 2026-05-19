@@ -9,4 +9,11 @@
     openFirewall = true;
     user.group = "netbird-passac";
   };
+
+  environment.persistence."/persist" = {
+    directories = [
+      "/var/lib/netbird-passac"
+    ];
+  };
+
 }
