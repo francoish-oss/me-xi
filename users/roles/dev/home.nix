@@ -3,10 +3,12 @@
   imports = [
     ../../../apps/bitwarden.nix
     ../../../apps/bwrap.nix
-    ../../../apps/firefox.nix
-    ../../../apps/zed.nix
     ../../../apps/devpod.nix
+    ../../../apps/librewolf.nix
     ../../../apps/minimon.nix
+    ../../../apps/mullvad-browser.nix
+    ../../../apps/ungoogled-chromium.nix
+    ../../../apps/zed.nix
   ];
 
   # Packages specific to developers
