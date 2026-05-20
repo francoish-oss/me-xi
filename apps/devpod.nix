@@ -10,6 +10,9 @@
       ".config/devpod"
       ".local/share/devpod"
     ];
+    files = [
+      ".ssh/config.devpod"
+    ];
   };
 
   programs.ssh = {
