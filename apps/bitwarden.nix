@@ -37,7 +37,6 @@
       Description = "rbw ssh-agent wrapper";
     };
     Service = {
-      # Use full path to the binary to ensure it starts correctly
       ExecStart = "${pkgs.rbw}/bin/rbw agent";
       Restart = "on-failure";
     };
@@ -47,6 +46,7 @@
   };
 
   home.persistence."/persist" = {
+    # share/rbw/device_id & .config/rbw/config.json
     directories = [
       ".config/rbw"
       ".local/share/rbw"
