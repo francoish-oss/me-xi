@@ -18,6 +18,18 @@
     SSH_ASKPASS_REQUIRE = "force";
   };
 
+  programs.bash = {
+    enable = true;
+    initExtra = ''
+      # make $XDG_RUNTIME_DIR resolves correctly
+      export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/rbw/ssh-agent-socket"
+    '';
+  };
+
+  programs.bash.interactiveShellInit = ''
+    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/rbw/ssh-agent-socket"
+  '';
+
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;

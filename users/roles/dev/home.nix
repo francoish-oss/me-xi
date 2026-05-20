@@ -8,7 +8,6 @@
     ../../../apps/minimon.nix
     ../../../apps/mullvad-browser.nix
     ../../../apps/ungoogled-chromium.nix
-    # ../../../apps/zed.nix
   ];
 
   # Packages specific to developers

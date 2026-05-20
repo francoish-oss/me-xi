@@ -10,7 +10,6 @@
       "/var/lib/bluetooth" # Keeps your headphones/mouse paired
 
       "/var/lib/NetworkManager" # Somehow it's with caps ...
-
       "/etc/NetworkManager/"
       "/var/lib/nixos" # Keeps track of system state/uid mappings
 

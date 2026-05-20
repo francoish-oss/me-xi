@@ -34,7 +34,6 @@
                   type = "btrfs";
                   extraArgs = [ "-f" ]; # Force override
                   subvolumes = {
-                    # This is the one you will wipe/rollback
                     "/root" = {
                       mountpoint = "/";
                       mountOptions = [
@@ -42,7 +41,6 @@
                         "noatime"
                       ];
                     };
-                    # This stores your Nix Store (needs to stay!)
                     "/nix" = {
                       mountpoint = "/nix";
                       mountOptions = [
@@ -50,7 +48,6 @@
                         "noatime"
                       ];
                     };
-                    # This stores what you actually want to keep
                     "/persist" = {
                       mountpoint = "/persist";
                       mountOptions = [
@@ -58,7 +55,6 @@
                         "noatime"
                       ];
                     };
-                    # Your swap file subvolume
                     "/swap" = {
                       mountpoint = "/.swapvol";
                       swap.swapfile.size = "12G";
