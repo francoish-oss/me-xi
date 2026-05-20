@@ -16,8 +16,6 @@
     ];
   };
 
-  home.file.".ssh/config.devpod".text = "";
-
   programs.ssh = {
     extraConfig = ''
       Include ~/.ssh/config.devpod
