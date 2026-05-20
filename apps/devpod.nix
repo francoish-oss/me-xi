@@ -21,8 +21,4 @@
     '';
   };
 
-  home.file.".ssh/config.devpod" = {
-    text = "# DevPod managed configurations\n";
-    mutable = true;
-  };
 }
