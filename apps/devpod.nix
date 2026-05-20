@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     devpod
-    devpod-desktop
   ];
 
   home.persistence."/persist" = {
