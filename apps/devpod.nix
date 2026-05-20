@@ -15,9 +15,7 @@
     ];
   };
 
-  home.file."/persist/.ssh/config.devpod" = {
-    text = "# DevPod managed configurations\n";
-  };
+  home.file.".ssh/config.devpod".text = "";
 
   programs.ssh = {
     extraConfig = ''
