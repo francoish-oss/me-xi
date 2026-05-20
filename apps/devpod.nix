@@ -7,6 +7,7 @@
 
   home.persistence."/persist" = {
     directories = [
+      ".devpod"
       ".config/devpod"
       ".local/share/devpod"
     ];
