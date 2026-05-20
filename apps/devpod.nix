@@ -12,4 +12,15 @@
       ".local/share/devpod"
     ];
   };
+
+  programs.ssh = {
+    extraConfig = ''
+      Include ~/.ssh/config.devpod
+    '';
+  };
+
+  home.file.".ssh/config.devpod" = {
+    text = "# DevPod managed configurations\n";
+    mutable = true;
+  };
 }
