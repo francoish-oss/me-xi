@@ -4,6 +4,7 @@
     ../../../apps/bitwarden.nix
     ../../../apps/bwrap.nix
     ../../../apps/devpod.nix
+    ../../../apps/git.nix
     ../../../apps/librewolf.nix
     ../../../apps/minimon.nix
     ../../../apps/mullvad-browser.nix

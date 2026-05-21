@@ -1,7 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
-  programs.git = {
-    enable = true;
+  home.packages = with pkgs; [
+    git
+  ];
+
+  home.persistence."/persist" = {
+    files = [
+      ".gitconfig"
+    ];
   };
 }
