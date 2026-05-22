@@ -15,7 +15,6 @@
   home.sessionVariables = {
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/rbw/ssh-agent-socket";
     SSH_AUTH_ONLY = "yes";
-    SSH_ASKPASS_REQUIRE = "force";
   };
 
   programs.bash = {
